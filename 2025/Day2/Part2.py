@@ -24,4 +24,3 @@ for n, m in labels:
                 res += i
                 break
 print(res)
-
