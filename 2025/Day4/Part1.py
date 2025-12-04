@@ -7,22 +7,10 @@ for r in range(row):
     for c in range(col):
         if grid[r][c] == '@':
             count = 0
-            if r - 1 > -1 and grid[r - 1][c] == '@':
-                count += 1
-            if r - 1 > -1 and c - 1 > -1 and grid[r - 1][c - 1] == '@':
-                count += 1
-            if c - 1 > -1 and grid[r][c - 1] == '@':
-                count += 1
-            if r + 1 < row and grid[r + 1][c] == '@':
-                count += 1
-            if r + 1 < row and c - 1 > -1 and grid[r + 1][c - 1] == '@':
-                count += 1
-            if r - 1 > -1 and c + 1 < col and grid[r - 1][c + 1] == '@':
-                count += 1
-            if c + 1 < col and grid[r][c + 1] =='@':
-                count += 1
-            if r + 1 < row and c + 1 < col and grid[r + 1][c + 1] == '@':
-                count += 1
+            for dr, dc in [(1, 0), (0, 1), (-1, 0), (0, -1), (-1, -1), (1, 1), (1, -1), (-1, 1)]:
+                if 0 <= r + dr < row and 0 <= c + dc < col and grid[r + dr][c + dc] == '@':
+                    count += 1
             if count < 4:
                 res += 1
 print(res)
+
