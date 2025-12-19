@@ -27,6 +27,6 @@ for i in range(len(operator) - 1, -1, -1):
             x -= 1
             if num != "":
                 prod *= int(num)
-        res += prod
+        res += prod  
 
 print(res)
